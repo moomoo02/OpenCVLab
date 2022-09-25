@@ -1,6 +1,6 @@
 import cv2
 
-img = cv2.imread('assets/elgato.jpeg', 0)
+img = cv2.imread('assets/elgato.jpeg', 1)
 
 #-1, grb
 # 0, grayscale
