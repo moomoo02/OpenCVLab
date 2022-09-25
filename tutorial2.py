@@ -1,11 +1,13 @@
 import cv2
 import random
 
-img = cv2.imread("assets/elgato.jpeg", -1)
+img = cv2.imread("assets/elgato.jpeg", 1)
 
-for i in range(400):
-    for j in range(img.shape[1]):
-        img[i][j] = [random.randint(0,255),random.randint(0,255),random.randint(0,255)]
+print(img.shape)
+
+tag = img[500:700, 600:900]
+
+img[100:300, 650:950] = tag
 
 cv2.imshow('Image', img)
 cv2.waitKey(10000)
