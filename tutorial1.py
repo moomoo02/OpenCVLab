@@ -1,6 +1,7 @@
 import cv2
 
 img = cv2.imread('assets/elgato.jpeg', 1)
+img = cv2.resize(img, (400,400))
 
 #-1, grb
 # 0, grayscale
