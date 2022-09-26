@@ -7,7 +7,11 @@ cap = cv2.VideoCapture(0)
 while True:
     ret, frame = cap.read()
 
-    cv2.imshow('frame', frame)
+    image = np.zeros(frame.shape)
+
+    cv2.imshow('image', image)
+
+    #cv2.imshow('frame', frame)
 
     #Breaks out when q is pressed
     if cv2.waitKey(1) == ord('q'):
