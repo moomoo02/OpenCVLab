@@ -21,7 +21,7 @@ while True:
 
     #Text  cv2.putText(image, text, position, font, fontScale, color, thickness, line type)
     font = cv2.FONT_HERSHEY_SIMPLEX
-    img = cv2.putText(img, 'moomoo02', (200,height-20), font, 4, (0,0,0), 6, cv2.LINE_AA)
+    img = cv2.putText(img, 'moomoo02', (200,height-20), font, 2, (0,0,0), 6, cv2.LINE_AA)
     cv2.imshow('frame', frame)
 
     #Breaks out when q is pressed
