@@ -13,10 +13,10 @@ while True:
     smaller_frame = cv2.resize(frame, (0,0), fx=0.5, fy=0.5)
 
     #Split into 4 parts
-    image[:height//2, :width//2] = smaller_frame
-    image[height//2:, :width//2] = smaller_frame
-    image[:height//2, width//2:] = smaller_frame
-    image[height//2:, width//2:] = smaller_frame
+    image[:height//2, :width//2] = smaller_frame #Top left
+    image[height//2:, :width//2] = cv2.rotate(smaller_frame, cv2.ROTATE_180) #Bottom left
+    image[:height//2, width//2:] = smaller_frame #Top right
+    image[height//2:, width//2:] = cv2.rotate(smaller_frame, cv2.ROTATE_180) #Bottom right
 
     cv2.imshow('image', image) 
 
