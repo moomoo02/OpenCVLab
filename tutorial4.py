@@ -13,10 +13,10 @@ while True:
     img = cv2.line(frame, (0,0), (width, height), (255,0,0), 10)
     img = cv2.line(frame, (width,0), (0, height), (255,0,0), 10)
 
-
+    #Rectangle: cv2.rectangle(frame, top-left, bottom-right, color, thickness)
     img = cv2.rectangle(frame, (100,100), (200,200), (128,128,128), 5)
     cv2.imshow('frame', frame)
-
+    
     #Breaks out when q is pressed
     if cv2.waitKey(1) == ord('q'):
         break
