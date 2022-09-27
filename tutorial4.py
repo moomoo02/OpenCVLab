@@ -19,6 +19,9 @@ while True:
     #Circle: cv2.circle(frame, center-position, radius, color, thickness(-1 to fill))
     img = cv2.circle(frame, (300,300), 60, (0,0,255), -1)
 
+    #Text  cv2.putText(image, text, position, font, fontScale, color, thickness, line type)
+    font = cv2.FONT_HERSHEY_SIMPLEX
+    img = cv2.putText(img, 'moomoo02', (200,height-20), font, 4, (0,0,0), 6, cv2.LINE_AA)
     cv2.imshow('frame', frame)
 
     #Breaks out when q is pressed
