@@ -10,8 +10,14 @@ while True:
     height = int(cap.get(4))
 
     hsv = cv2.cvtColor(frame, cv2.COLOR_BGR2HSV)
+    lower_blue = np.array([90,50,50])
+    upper_blue = np.array([130,255,255])
 
-    cv2.imshow('frame', hsv)
+    mask = cv2.inRange(hsv, lower_blue, upper_blue) #Mask so only blue pixels exist
+
+    result = cv2.bitwise_and(frame, frame, mask=mask) #bitwise and frame with frame with mask
+
+    cv2.imshow('frame', result)
 
     #Breaks out when q is pressed
     if cv2.waitKey(1) == ord('q'):
@@ -19,3 +25,6 @@ while True:
 
 cap.release()
 cv2.destroyAllWindows()
+
+BGR_color = np.array([[[255,0,0]]])
+cv2.cvtColor(BGR_color, cv2.COLOR_BGR2HSV)
